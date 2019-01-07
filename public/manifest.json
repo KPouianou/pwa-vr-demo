@@ -4,6 +4,7 @@
   "name": "PWA & VR Demo App",
   "scope": "/",
   "display": "browser",
+  "icon_url": "/images",
   "start_url": "https://pwa-vr-demo.herokuapp.com/",
   "short_name": "pwa_vr_demo",
   "theme_color": "transparent",
