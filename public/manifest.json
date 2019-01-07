@@ -4,7 +4,7 @@
   "name": "PWA & VR Demo App",
   "scope": "/",
   "display": "browser",
-  "start_url": "https://PLACEHOLDER-FOR-PWA-URL",
+  "start_url": "https://pwa-vr-demo.herokuapp.com/",
   "short_name": "pwa_vr_demo",
   "theme_color": "transparent",
   "description": "A sample PWA for testing purposes",
