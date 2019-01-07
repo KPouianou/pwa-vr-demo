@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -19,8 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('*',function(req,res,next){
+  if(req.headers['x-forwarded-proto']!='https')
+    res.redirect(['https://', req.get('Host'), req.url].join(''));
+  else
+    next() /* Continue to other routes if we're not redirecting */
+});
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

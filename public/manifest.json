@@ -1,15 +1,16 @@
 {
   "dir": "ltr",
+  "title": "pwa_vr_demo",
   "lang": "en-us",
   "name": "PWA & VR Demo App",
   "scope": "/",
   "display": "standalone",
   "start_url": "https://pwa-vr-demo.herokuapp.com/",
   "short_name": "pwa_vr_demo",
-  "theme_color": "transparent",
   "description": "A sample PWA for testing purposes",
   "orientation": "any",
-  "background_color": "transparent",
+  "background_color": "#ffffff",
+  "theme_color": "#3f5161",
   "related_applications": [],
   "prefer_related_applications": false,
   "icons": [
