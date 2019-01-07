@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const dotenv = require('dotenv');
 
 var indexRouter = require('./routes/index');
 
@@ -18,12 +19,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('*',function(req,res,next){
-  if(req.headers['x-forwarded-proto']!='https')
-    res.redirect(['https://', req.get('Host'), req.url].join(''));
-  else
-    next() /* Continue to other routes if we're not redirecting */
-});
+if (process.env === 'production') {
+  app.get('*',function(req,res,next){
+    if(req.headers['x-forwarded-proto']!='https')
+      res.redirect(['https://', req.get('Host'), req.url].join(''));
+    else
+      next() /* Continue to other routes if we're not redirecting */
+  });
+}
 
 app.use('/', indexRouter);
 
