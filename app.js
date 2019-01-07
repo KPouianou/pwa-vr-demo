@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').load({ silent: true }); 
 
 var indexRouter = require('./routes/index');
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-if (process.env === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.get('*',function(req,res,next){
     if(req.headers['x-forwarded-proto']!='https')
       res.redirect(['https://', req.get('Host'), req.url].join(''));
