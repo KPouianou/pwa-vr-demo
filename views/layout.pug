@@ -2,6 +2,8 @@ doctype html
 html
   head
     title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='theme-color', content='#3f5161')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='manifest', href='/manifest.json')
     script(src='/pwabuilder-sw-register.js')
@@ -9,6 +11,6 @@ html
     script(src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js")
     script(src="https://code.jquery.com/pep/0.4.1/pep.js")
   body
-    //- block content
+    block content
     canvas(id="renderCanvas", touch-action="none")
     script(src='/javascripts/main.js')
