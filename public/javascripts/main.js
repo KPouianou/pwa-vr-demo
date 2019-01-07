@@ -1,3 +1,8 @@
+var polyfill = new WebVRPolyfill();
+
+// Get the canvas element 
+var canvas = document.getElementById("renderCanvas");
+
 let deferredPrompt;
 
 // window.addEventListener('beforeinstallprompt', (e) => {
@@ -13,9 +18,6 @@ window.addEventListener('beforeinstallprompt', function(event) {
     console.log("before install prompt")
     event.prompt();
 });
-
-// Get the canvas element 
-var canvas = document.getElementById("renderCanvas");
 
 // Generate the BABYLON 3D engine
 var engine = new BABYLON.Engine(canvas, true);
