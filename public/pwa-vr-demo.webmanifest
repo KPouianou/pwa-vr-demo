@@ -4,7 +4,7 @@
   "lang": "en-us",
   "name": "PWA & VR Demo App",
   "scope": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "start_url": "/",
   "short_name": "pwa_vr_demo",
   "description": "A sample PWA for testing purposes",
